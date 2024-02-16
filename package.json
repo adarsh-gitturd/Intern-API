@@ -8,24 +8,21 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.7",
     "concurrently": "^8.2.2",
+    "nodemon": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-
   "proxy": "http://localhost:5000",
-
   "scripts": {
     "start": "PORT=4999 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node backend-server/index.js",
+    "server": "nodemon backend-server/index.js",
     "dev": "concurrently \"npm run start\" \"npm run server\""
   },
-
-
   "eslintConfig": {
     "extends": [
       "react-app",
