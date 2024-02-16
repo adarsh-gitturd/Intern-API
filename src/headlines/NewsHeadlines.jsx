@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import '../styles.css'
+import '../styles.css';
+
+import p from '../images/placeholder.png';
 
 const NewsHeadlines = (props) => {
   const [response, setResponse] = useState([]);
@@ -63,8 +65,7 @@ const NewsHeadlines = (props) => {
               Sunt deserunt dolorum, eveniet minus nesciunt iure quos aperiam sit assumenda enim iusto voluptatem sequi repellendus. Ea atque, cumque ducimus, quaerat quos, harum ad odit maxime voluptatum pariatur deserunt eaque?
               Expedita libero, officiis rerum nisi quod asperiores quibusdam a fugiat quo corporis sit animi iste ad eaque minima autem iusto quos odio modi excepturi iure? Cupiditate recusandae perspiciatis deserunt nobis?
               </p>
-            <img src={item.urlToImage} alt={item.title} className='img' />
-
+              <img src={item.urlToImage ? item.urlToImage : `${p}`} alt={item.title} className='img' />
           </div>
           <p className='src'>Source: {item.source}</p>
           {/* <p>URL: {item.url}</p>
