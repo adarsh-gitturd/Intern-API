@@ -4,7 +4,11 @@ import '../styles.css';
 
 import p from '../images/placeholder.png';
 
+var theme_ = sessionStorage.getItem('theme');
+var themeArray_;
+
 const NewsHeadlines = (props) => {
+  console.log(sessionStorage.getItem('theme'))
   const [response, setResponse] = useState([]);
   const [data, setData] = useState([]);
 
@@ -29,6 +33,7 @@ const NewsHeadlines = (props) => {
   }
 
   useEffect(() => {
+    // console.log(sessionStorage.getItem('theme'))  
     axios.get(props.newsheadline) 
     .then((res) => {
         for(let i = 0; i < 5; i++) {
@@ -43,9 +48,30 @@ const NewsHeadlines = (props) => {
   useEffect(() => {
     setDataValues();
   }, [response]);
-  
+
+  useEffect(() => {
+    theme_ = sessionStorage.getItem('theme');
+    themeArray_ = theme_.split(/\),/);
+    
+    // Add back the closing parenthesis that was removed by the split
+    for (let i = 0; i < themeArray_.length - 1; i++) {
+      themeArray_[i] = themeArray_[i] + ")";
+    }
+    // console.log(themeArray_);
+  }, []);
+ 
+
+// console.log(themeArray_[0]); // This will log an array of RGB values
   return(
     <div>
+       <div style={{
+      background: themeArray_ ? `linear-gradient(180deg, ${themeArray_[0]}, ${themeArray_[1]}, ${themeArray_[2]}, ${themeArray_[3]})` : 'red red red red',
+      backgroundSize: '400% 400%',
+      animation: 'gradient 2s ease infinite',
+      position: 'fixed',
+      height: '100vh',
+      overflowY: 'scroll'
+    }}>
       <div class='head'>Top {props.head} Headlines </div>
 
       <div className='news-container'>
@@ -68,11 +94,13 @@ const NewsHeadlines = (props) => {
               <img src={item.urlToImage ? item.urlToImage : `${p}`} alt={item.title} className='img' />
           </div>
           <p className='src'>Source: {item.source}</p>
-          {/* <p>URL: {item.url}</p>
-          <p>URL to Image: {item.urlToImage}</p> */}
         </div>
       ))}
     </div>
+          
+        </div>
+  );
+      
     
     </div>
   );

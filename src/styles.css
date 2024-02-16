@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-    background-color: rgb(255, 172, 172);
+    background-color: rgb(158, 145, 145);
     padding: 20px;
     width: 80%;
     border: 2px solid black;
@@ -87,7 +87,7 @@
 }
 
 .app-container{
-    background-color: rgb(255, 172, 172);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     height: 100vh;
     display: flex;
@@ -137,3 +137,112 @@
     align-items: center;
     justify-content: center;
 }
+
+svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.themes{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    margin-top: -700px;
+    margin-right: -1600px;
+    border-radius: 50%;
+}
+
+.themes:hover{
+    width: 100px;
+    height: 100px;
+    transition: 400ms ease-in-out;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.theme-menu{
+    position: absolute;
+    z-index: 10;
+    margin-top: -350px;
+    margin-right: -1600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border: 2px solid black;
+    width: 150px;
+    height: 200px;
+}
+
+.theme-menu span{
+    width: 40px;
+    position:absolute;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.red{
+    position: relative;
+    display: inline-block;
+    margin-left: -100px;
+    background-color: red;
+    margin-top: -150px;
+}
+
+.blue{
+    position: relative;
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: -150px;
+    background-color: blue;
+}
+
+.green{
+    position: relative;
+    display: inline-block;
+    margin-left: -100px;
+    background-color: rgb(0, 194, 42);
+}
+
+.black{
+    position: relative;
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: 150px;
+    background-color: black;
+}
+
+.purple{
+    position: relative;
+    display: inline-block;
+    margin-left: -100px;
+    background-color: purple;
+    margin-top: 150px;
+}
+
+.brown{
+    position: relative;
+    display: inline-block;
+    margin-left: 100px;
+    background-color: #964B00
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  

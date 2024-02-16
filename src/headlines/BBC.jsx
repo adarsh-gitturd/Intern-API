@@ -3,7 +3,10 @@ import NewsHeadlines from './NewsHeadlines'
 
 const BBC = () => {
   return (
-    <NewsHeadlines newsheadline='bbc' head='BBC'/>
+    <div>
+        {/* <GradientBackground /> */}
+        <NewsHeadlines newsheadline='bbc' head='BBC'/>
+    </div>
   )
 }
 
