@@ -46,7 +46,7 @@ app.listen(port, () => {
 const fetchAPI = async (api, res) => {
     try {
         const response = await axios.get(api);
-        res.send(response.data.articles.slice(0, 5));
+        res.send(response.data.articles.slice(3, 8));
       } catch (error) {
         console.error(error);
         res.status(500).send(`NODE SERVER ERROR : couldnt fetch headlines. for API ${api}`);
