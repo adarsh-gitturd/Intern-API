@@ -1,5 +1,7 @@
 const express = require('express');
 const axios = require('axios');
+const path = require('path');
+
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -10,7 +12,8 @@ const TRUMP_API = 'https://newsapi.org/v2/top-headlines?q=trump&apiKey=09aae49f3
 
 
 app.get('/', async (req, res) => {
-    res.send("hello world!")
+    // res.send("hello world!")
+    res.json({ message: "Hello from server!" });
 });
 
 /*
@@ -46,6 +49,6 @@ const fetchAPI = async (api, res) => {
         res.send(response.data.articles.slice(0, 5));
       } catch (error) {
         console.error(error);
-        res.status(500).send(`NODE SERVER ERROR : couldnt fetch headlines. for ${api}`);
+        res.status(500).send(`NODE SERVER ERROR : couldnt fetch headlines. for API ${api}`);
       }
 }
