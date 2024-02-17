@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../styles.css';
+import { Link } from 'react-router-dom';
 
 import p from '../images/placeholder.png';
 
@@ -51,28 +52,20 @@ const NewsHeadlines = (props) => {
 
   useEffect(() => {
     theme_ = sessionStorage.getItem('theme');
-    themeArray_ = theme_.split(/\),/);
-    
-    // Add back the closing parenthesis that was removed by the split
-    for (let i = 0; i < themeArray_.length - 1; i++) {
-      themeArray_[i] = themeArray_[i] + ")";
-    }
-    // console.log(themeArray_);
+    themeArray_ = theme_.split(',');
+
+    document.documentElement.style.setProperty('--v1', themeArray_[0]);
+    document.documentElement.style.setProperty('--v2', themeArray_[1]);
+    document.documentElement.style.setProperty('--v3', themeArray_[2]);
+    document.documentElement.style.setProperty('--v4', themeArray_[3]);
   }, []);
  
-
-// console.log(themeArray_[0]); // This will log an array of RGB values
   return(
     <div>
-       <div style={{
-      background: themeArray_ ? `linear-gradient(180deg, ${themeArray_[0]}, ${themeArray_[1]}, ${themeArray_[2]}, ${themeArray_[3]})` : 'red red red red',
-      backgroundSize: '400% 400%',
-      animation: 'gradient 2s ease infinite',
-      position: 'fixed',
-      height: '100vh',
-      overflowY: 'scroll'
-    }}>
+       <div className='pl'>
       <div class='head'>Top {props.head} Headlines </div>
+
+      <Link to='/'><div className = 'home'>Home</div></Link>
 
       <div className='news-container'>
       {data.map((item, index) => (

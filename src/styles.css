@@ -1,6 +1,20 @@
+:root{
+    --v1: #FFCCCC;
+    --v2: #E36E6E;
+    --v3: #D61212;
+    --v4: #460000;
+    --v6: #FFCCCC;
+
+}
+
 *{
     margin: 0px;
     padding: 0px;
+
+    /* --v1: '#FFCCCC';
+    --v2: '#E36E6E';
+    --v3: '#D61212';
+    --v4: '#460000'; */
 }
 
 .head{
@@ -24,7 +38,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-    background-color: rgb(158, 145, 145);
+    background-color: rgb(255, 239, 239);
     padding: 20px;
     width: 80%;
     border: 2px solid black;
@@ -234,6 +248,17 @@ svg {
     background-color: #964B00
 }
 
+.pl{
+  /* background: themeArray_ ? `linear-gradient(-45deg, ${themeArray_[0]}, ${themeArray_[1]}, ${themeArray_[2]}, ${themeArray_[3]})` : 'red red red red', */
+  background: linear-gradient(90deg, var(--v1), var(--v2), var(--v2), var(--v1));
+  background-size: 400% 400%;   
+  animation: gradient 5s ease infinite; 
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+
+}
 @keyframes gradient {
     0% {
       background-position: 0% 50%;
@@ -245,4 +270,22 @@ svg {
       background-position: 0% 50%;
     }
   }
-  
+
+.home{
+    position: absolute;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-left: 90%;
+    margin-top: -60px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 3rem;
+    border: 2px solid var(--v3);
+    color: var(--v4);
+}
+
+.home:hover{
+    cursor: pointer;
+    background-color: var(--v1);
+    transition: 600ms ease-in-out;
+}

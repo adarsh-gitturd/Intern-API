@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
 
-// API KEY : 09aae49f3e934487ab282649b8812c25
-// GET https://newsapi.org/v2/top-headlines?country=us&apiKey=09aae49f3e934487ab282649b8812c25
+// API KEY : d29564f928614087a89befebb57bce6c
+// GET https://newsapi.org/v2/top-headlines?country=us&apiKey=d29564f928614087a89befebb57bce6c
 
 import bbc from './images/bbc.jpeg';
 import germany from './images/germany.jpg';
@@ -20,13 +20,20 @@ const App = () => {
   const [colorScheme, setColorScheme] = useState([]);
   
   
-  scheme['red'] = ['rgb(255, 204, 204)', 'rgb(227, 110, 110)', 'rgb(214, 18, 18)', 'rgb(70, 0, 0)'];
-  scheme['blue'] = ['rgb(204, 204, 255)', 'rgb(110, 110, 227)', 'rgb(18, 18, 214)', 'rgb(0, 0, 70)'];
-  scheme['green'] = ['rgb(204, 255, 204)', 'rgb(110, 227, 110)', 'rgb(18, 214, 18)', 'rgb(0, 70, 0)'];
-  scheme['black'] = ['rgb(196, 195, 192)', 'rgb(112, 112, 111)', 'rgb(46, 46, 45)', 'rgb(0, 0, 0)'];
-  scheme['purple'] = ['rgb(248, 166, 255)', 'rgb(163, 67, 171)', 'rgb(96, 24, 102)', 'rgb(50, 1, 54)'];
-  scheme['brown'] = ['rgb(255, 228, 196)', 'rgb(159, 129, 112)', 'rgb(121, 68, 59)', 'rgb(61, 43, 31)'];
+  // scheme['red'] = ['rgb(255, 204, 204)', 'rgb(227, 110, 110)', 'rgb(214, 18, 18)', 'rgb(70, 0, 0)'];
+  // scheme['blue'] = ['rgb(204, 204, 255)', 'rgb(110, 110, 227)', 'rgb(18, 18, 214)', 'rgb(0, 0, 70)'];
+  // scheme['green'] = ['rgb(204, 255, 204)', 'rgb(110, 227, 110)', 'rgb(18, 214, 18)', 'rgb(0, 70, 0)'];
+  // scheme['black'] = ['rgb(196, 195, 192)', 'rgb(112, 112, 111)', 'rgb(46, 46, 45)', 'rgb(0, 0, 0)'];
+  // scheme['purple'] = ['rgb(248, 166, 255)', 'rgb(163, 67, 171)', 'rgb(96, 24, 102)', 'rgb(50, 1, 54)'];
+  // scheme['brown'] = ['rgb(255, 228, 196)', 'rgb(159, 129, 112)', 'rgb(121, 68, 59)', 'rgb(61, 43, 31)'];
   
+  scheme['red'] = ['#FFCCCC', '#E36E6E', '#D61212', '#460000'];
+  scheme['blue'] = ['#CCCCFF', '#6E6EE3', '#1212D6', '#000046'];
+  scheme['green'] = ['#CCFFCC', '#6EE36E', '#12D612', '#004600'];
+  scheme['black'] = ['#C4C3C0', '#70706F', '#2E2E2D', '#000000'];
+  scheme['purple'] = ['#F8A6FF', '#A343AB', '#601866', '#320136'];
+  scheme['brown'] = ['#FFE4C4', '#9F8170', '#79443B', '#3D2B1F'];
+
   const themeMenu = () => {
     if(showTheme) setShowTheme(false);
     else
