@@ -289,3 +289,34 @@ svg {
     background-color: var(--v1);
     transition: 600ms ease-in-out;
 }
+
+@media (max-width: 1440px) {
+    .head {
+        font-size: 2.5rem;
+    }
+
+    .news {
+        width: 90%;
+    }
+
+    .content {
+        width: 70%;
+    }
+
+    .themes {
+        width: 60px;
+        height: 60px;
+        margin-top: -500px;
+        margin-right: -1200px;
+    }
+
+    .theme-menu {
+        margin-top: -250px;
+        margin-right: -1200px;
+    }
+
+    .home {
+        font-size: 1.5rem;
+        margin-top: -40px;
+    }
+}
